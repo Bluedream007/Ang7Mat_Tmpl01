@@ -3,36 +3,29 @@
 <section class="{{ theme }}">
 -->
 <mat-sidenav-container class="sidenav-container">
+  <!-- 自訂顏色 -->
+  <!-- 配合 router 要使用 routerLink, 不可使用 href=""會有錯誤 -->
+  <!--
+<mat-sidenav #drawer class="sidenav" fixedInViewport="true"
+             fixedTopGap="20" fixedBottomGap="20"
+    [attr.role]="(isHandset$ | async) ? 'dialog' : 'navigation'"
+    [mode]="(isHandset$ | async) ? 'over' : 'side'"
+    [opened]="!(isHandset$ | async)"
+    (opened)="openeDrawer()"
+    (closed)="closeDrawer()">
+  <mat-toolbar>Menu</mat-toolbar>
 
-  <mat-sidenav #drawer class="sidenav" fixedInViewport="true"
-               fixedTopGap="20" fixedBottomGap="20"
-      [attr.role]="(isHandset$ | async) ? 'dialog' : 'navigation'"
-      [mode]="(isHandset$ | async) ? 'over' : 'side'"
-      [opened]="!(isHandset$ | async)"
-      (opened)="openeDrawer()"
-      (closed)="closeDrawer()">
-    <mat-toolbar>Menu</mat-toolbar>
-    <!-- 自訂顏色 -->
-    <mat-nav-list class="myStyle-bkground-amber">
-          <!--
-          <a mat-list-item href="home">Home</a>
-          -->
-       <!-- 配合 router 要使用 routerLink, 不可使用 href=""會有錯誤 -->
-       <a mat-list-item routerLink="home">Home</a>
-       <a mat-list-item routerLink="carousel">Carousel</a>
-       <a mat-list-item routerLink="dashboard">DashBoard</a>
-       <a mat-list-item routerLink="tree">FolderTree</a>
-       <a mat-list-item routerLink="drag">DragList</a>
-       <a mat-list-item routerLink="customer">CustomerForm</a>
-       <a mat-list-item routerLink="order">OrderList</a>
-    </mat-nav-list>
-
-
-
-
-
+  <mat-nav-list class="myStyle-bkground-amber">
+     <a mat-list-item routerLink="home">Home</a>
+     <a mat-list-item routerLink="carousel">Carousel</a>
+     <a mat-list-item routerLink="dashboard">DashBoard</a>
+     <a mat-list-item routerLink="tree">FolderTree</a>
+     <a mat-list-item routerLink="drag">DragList</a>
+     <a mat-list-item routerLink="customer">CustomerForm</a>
+     <a mat-list-item routerLink="order">OrderList</a>
+  </mat-nav-list>
   </mat-sidenav>
-
+  -->
   <mat-sidenav-content>
 
     <mat-toolbar color="primary">
@@ -77,9 +70,7 @@
         <a routerLink="orderDetail"><button mat-menu-item>OrderDetail</button></a>
       </mat-menu>
 
-      <button mat-icon-button [matMenuTriggerFor]="rootMenu">
-        <mat-icon>more_vert</mat-icon>
-      </button>
+
       <!-- 橫向選單 end -->
 
       <!-- 切換 Theme
@@ -87,9 +78,16 @@
       -->
       <!-- 定義css, 在這之後的都會被推到右邊去 -->
       <span class="example-fill-remaining-space"></span>
+      <button mat-icon-button [matMenuTriggerFor]="rootMenu">
+        <mat-icon>more_vert</mat-icon>
+      </button>
+      <!--
       <button mat-button *ngIf="bidiMode === 'ltr'" (click)="bidiMode = 'rtl'">LTR</button>
       <button mat-button *ngIf="bidiMode === 'rtl'" (click)="bidiMode = 'ltr'">RTL</button>
-
+      <button mat-icon-button >
+        <mat-icon>exit_to_app</mat-icon>
+      </button>
+      -->
       <button mat-icon-button [matMenuTriggerFor]="messageMenu" #menuTrigger="matMenuTrigger">
         <mat-icon>message</mat-icon>
       </button>
@@ -104,10 +102,6 @@
           <span>訊息設定</span>
         </button>
       </mat-menu>
-      <button mat-icon-button >
-        <mat-icon>exit_to_app</mat-icon>
-      </button>
-
     </mat-toolbar>
 
     <!-- Add Content Here -->

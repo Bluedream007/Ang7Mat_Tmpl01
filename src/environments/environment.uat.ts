@@ -6,7 +6,7 @@ export const environment = {
   production: false,
   env_name: 'UAT_ENV',
   MenBarBkgroundColor: 'pink',
-  Api_URL: 'http://xxxx/api/v1/products'
+  Api_URL: '/classicmodel-ap1'
 };
 
 /*

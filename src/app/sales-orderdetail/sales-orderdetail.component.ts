@@ -20,7 +20,8 @@ export class SalesOrderdetailComponent implements OnInit, AfterViewInit {
 
   //orderDetailList = new MatTableDataSource<any>();
   @Input() orderDetailList = new MatTableDataSource<any>();
-  displayedDetailColumns: string[] = ['orderLineNumber', 'productCode', 'quantityOrdered', 'priceEach'];
+  //displayedDetailColumns: string[] = ['orderLineNumber', 'productCode', 'quantityOrdered', 'priceEach'];
+  displayedDetailColumns: string[] = ['productCode', 'quantityOrdered', 'priceEach'];
 
   constructor(private orderDetailSrvApi: OrderDetailService) { }
 

@@ -29,7 +29,7 @@
 }
 
 .sidenavRight{
-  width: 600px;
+  width: 380px;
   background: $myPrimary-bkground;
 }
 
@@ -102,8 +102,8 @@ tr.display-element-row:not(.display-expanded-row):active {
   bottom: 56px;
   right: 0;
   background: rgba(0, 0, 0, 0.15);
-  z-index: 2000;
-  //z-index: 10;
+  //z-index: 2000;
+  z-index: 10;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -117,11 +117,13 @@ tr.display-element-row:not(.display-expanded-row):active {
 
 // for customerNumber; mat-column-xxxx(col. name)
 .mat-column-customerNumber {
-  max-width: 300px;
+  color: #92d6b4;
+  //max-width: 300px;
 }
 
 .mat-header-cell.mat-column-customerNumber {
   color: #92d6b4;
+  //max-width: 60px;
 }
 
 .mat-cell.mat-column-customerNumber {
@@ -130,10 +132,17 @@ tr.display-element-row:not(.display-expanded-row):active {
   //cursor: pointer;
 }
 
+.myTopToolBar {
+  width: 100%;
+  background: #85c4a2;
+}
+
 // for customerName
+/*
 .mat-column-customerName {
   max-width: 200px;
 }
+*/
 
 /*
 .mat-header-cell.mat-column-customerName {

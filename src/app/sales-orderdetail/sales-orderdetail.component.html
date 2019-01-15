@@ -8,8 +8,9 @@
   -->
   <mat-card class="orderDetail-card">
     <div class="orderDetail-Row">
-      <div class="orderDetail-Col"><span>Required Date: {{orderDataInDetail.requiredDate | date:'yyyy-MM-dd'}}</span></div>
-      <div class="orderDetail-Col">Shipped Date: {{orderDataInDetail.shippedDate | date:'yyyy-MM-dd'}} </div>
+
+      <div class="orderDetail-Col"><span>Required Date:<br> {{orderDataInDetail.requiredDate | date:'yyyy-MM-dd'}}</span></div>
+      <div class="orderDetail-Col"><span>Shipped Date:<br> {{orderDataInDetail.shippedDate | date:'yyyy-MM-dd'}} </span></div>
     </div>
     <br>
     <mat-card-header>
@@ -22,7 +23,7 @@
 
     </mat-card-header>
     <mat-card-content>
-      <!-- TODO 01/13/2019: rendRow not work
+      <!--
       <div>{{orderDetailList.data.indexOf(1).valueOf()}}}</div>
       -->
       <!-- Order Detail Table -->
@@ -40,22 +41,22 @@
 
         <!-- orderLineNumber Column -->
         <ng-container matColumnDef="orderLineNumber">
-          <th class="orderDetail-tableHead" mat-header-cell *matHeaderCellDef mat-sort-header>Item No</th>
+          <th class="orderDetail-tableHead" mat-header-cell *matHeaderCellDef mat-sort-header>Item</th>
           <td class="orderDetail-tableCol" mat-cell *matCellDef="let row">{{row.orderLineNumber}}</td>
         </ng-container>
         <!-- orderLineNumber Column -->
         <ng-container matColumnDef="productCode">
-          <th class="orderDetail-tableHead" mat-header-cell *matHeaderCellDef>Product Code</th>
+          <th class="orderDetail-tableHead" mat-header-cell *matHeaderCellDef>ProdCode</th>
           <td class="orderDetail-tableCol" mat-cell *matCellDef="let row">{{row.productCode}}</td>
         </ng-container>
         <!-- quantityOrdered Column -->
         <ng-container matColumnDef="quantityOrdered">
-          <th class="orderDetail-tableHead" mat-header-cell *matHeaderCellDef>quantity Ordered</th>
+          <th class="orderDetail-tableHead" mat-header-cell *matHeaderCellDef>quantity</th>
           <td class="orderDetail-tableCol" mat-cell *matCellDef="let row">{{row.quantityOrdered}}</td>
         </ng-container>
         <!-- priceEach Column -->
         <ng-container matColumnDef="priceEach">
-          <th class="orderDetail-tableHead" mat-header-cell *matHeaderCellDef>Price Each</th>
+          <th class="orderDetail-tableHead" mat-header-cell *matHeaderCellDef>Price</th>
           <td class="orderDetail-tableCol" mat-cell *matCellDef="let row">{{row.priceEach}}</td>
         </ng-container>
 

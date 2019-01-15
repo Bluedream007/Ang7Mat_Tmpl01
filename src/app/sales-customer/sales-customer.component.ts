@@ -61,7 +61,8 @@ export class SalesCustomerComponent implements OnInit, AfterViewInit {
   isLoadingResults = true;
   // Option for Query data
   QryOption = 'CustNo';
-  displayedColumns: string[] = ['customerNumber','customerName','phone','country', 'FuncList'];
+  //displayedColumns: string[] = ['customerNumber','customerName','phone','country', 'FuncList'];
+  displayedColumns: string[] = ['customerNumber', 'customerName', 'phone', 'FuncList'];
   //displayedColumns: string[] = ['position', 'name', 'weight', 'symbol', 'temp'];
   //dataSource = ELEMENT_DATA;
   dataSource = new MatTableDataSource<any>();
