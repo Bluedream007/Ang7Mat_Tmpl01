@@ -1,0 +1,140 @@
+
+<!-- 切換theme
+<section class="{{ theme }}">
+-->
+<mat-sidenav-container class="sidenav-container">
+
+  <mat-sidenav #drawer class="sidenav" fixedInViewport="true"
+               fixedTopGap="20" fixedBottomGap="20"
+      [attr.role]="(isHandset$ | async) ? 'dialog' : 'navigation'"
+      [mode]="(isHandset$ | async) ? 'over' : 'side'"
+      [opened]="!(isHandset$ | async)"
+      (opened)="openeDrawer()"
+      (closed)="closeDrawer()">
+    <mat-toolbar>Menu</mat-toolbar>
+    <!-- 自訂顏色 -->
+    <mat-nav-list class="myStyle-bkground-amber">
+          <!--
+          <a mat-list-item href="home">Home</a>
+          -->
+       <!-- 配合 router 要使用 routerLink, 不可使用 href=""會有錯誤 -->
+       <a mat-list-item routerLink="home">Home</a>
+       <a mat-list-item routerLink="carousel">Carousel</a>
+       <a mat-list-item routerLink="dashboard">DashBoard</a>
+       <a mat-list-item routerLink="tree">FolderTree</a>
+       <a mat-list-item routerLink="drag">DragList</a>
+       <a mat-list-item routerLink="customer">CustomerForm</a>
+       <a mat-list-item routerLink="order">OrderList</a>
+    </mat-nav-list>
+
+
+
+
+
+  </mat-sidenav>
+
+  <mat-sidenav-content>
+
+    <mat-toolbar color="primary">
+      <!--
+      <button
+        type="button"
+        aria-label="Toggle sidenav"
+        mat-icon-button
+        (click)="drawer.toggle()"
+        *ngIf="isHandset$ | async">
+        <mat-icon aria-label="Side nav toggle icon">menu</mat-icon>
+      </button>
+      -->
+      <button
+        type="button"
+        aria-label="Toggle sidenav"
+        mat-icon-button
+        (click)="toggleSideNavLeft(drawer)"
+        *ngIf="isHandset$ | async">
+        <mat-icon aria-label="Side nav toggle icon">menu</mat-icon>
+      </button>
+
+      <span [style.color]="EnvMenuBkColor" >Ang7Mat01 - {{EnvName}}</span>
+      <img src="assets/images/livejournal_32.png">
+      <!-- 橫向選單 -->
+      <mat-menu #rootMenu="matMenu">
+        <button mat-menu-item [matMenuTriggerFor]="subMenu_CI">CompanyInfo</button>
+        <button mat-menu-item [matMenuTriggerFor]="subMenu_SI">SalesInfo</button>
+      </mat-menu>
+
+      <mat-menu #subMenu_CI="matMenu">
+        <a routerLink="order"><button mat-menu-item>Order List</button></a>
+        <a routerLink="shipping"><button mat-menu-item>Shipping Info</button></a>
+        <button mat-menu-item>Company</button>
+      </mat-menu>
+
+      <mat-menu #subMenu_SI="matMenu">
+        <a routerLink="customer"><button mat-menu-item>CustomerForm</button></a>
+        <a routerLink="salesRepr"><button mat-menu-item disabled>Representative</button></a>
+        <a routerLink="order"><button mat-menu-item>OrderList</button></a>
+        <a routerLink="order2"><button mat-menu-item>Order2 List</button></a>
+        <a routerLink="orderDetail"><button mat-menu-item>OrderDetail</button></a>
+      </mat-menu>
+
+      <button mat-icon-button [matMenuTriggerFor]="rootMenu">
+        <mat-icon>more_vert</mat-icon>
+      </button>
+      <!-- 橫向選單 end -->
+
+      <!-- 切換 Theme
+      <button mat-button (click)="toggleTheme()">切換theme</button>
+      -->
+      <!-- 定義css, 在這之後的都會被推到右邊去 -->
+      <span class="example-fill-remaining-space"></span>
+      <button mat-button *ngIf="bidiMode === 'ltr'" (click)="bidiMode = 'rtl'">LTR</button>
+      <button mat-button *ngIf="bidiMode === 'rtl'" (click)="bidiMode = 'ltr'">RTL</button>
+
+      <button mat-icon-button [matMenuTriggerFor]="messageMenu" #menuTrigger="matMenuTrigger">
+        <mat-icon>message</mat-icon>
+      </button>
+      <mat-menu #messageMenu="matMenu">
+        <!-- 自訂顏色 -->
+        <button class="cust-colorRed-50" mat-menu-item>
+          <mat-icon>folder_special</mat-icon>
+          <span>最新訊息</span>
+          </button>
+        <button mat-menu-item>
+          <mat-icon>build</mat-icon>
+          <span>訊息設定</span>
+        </button>
+      </mat-menu>
+      <button mat-icon-button >
+        <mat-icon>exit_to_app</mat-icon>
+      </button>
+
+    </mat-toolbar>
+
+    <!-- Add Content Here -->
+    <router-outlet></router-outlet>
+
+
+    <!--
+    <mat-sidenav class="sidenav" opened="true" mode="side" position="end">
+      <div>我是右邊選單</div>
+
+      <mat-drawer-container>
+        <mat-drawer mode="side" opened="true">Drawer Side</mat-drawer>
+
+        <mat-drawer-content>
+          <span>content</span>
+
+          <button color="primary" mat-button *ngIf="bidiMode === 'ltr'" (click)="bidiMode = 'rtl'">LTR</button>
+          <button color="accent" mat-button *ngIf="bidiMode === 'rtl'" (click)="bidiMode = 'ltr'">RTL</button>
+        </mat-drawer-content>
+
+      </mat-drawer-container>
+
+
+    </mat-sidenav>
+    -->
+  </mat-sidenav-content>
+
+</mat-sidenav-container>
+
+

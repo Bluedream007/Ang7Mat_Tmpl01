@@ -1,0 +1,70 @@
+<!--<div class="mat-elevation-z8">-->
+<div class="expcnt-element-detail">
+  <!--
+  <div class="orderDetail-Row">
+    <div class="orderDetail-Col"><span>Required Date: {{orderDataInDetail.requiredDate | date:'yyyy-MM-dd'}}</span></div>
+    <div class="orderDetail-Col">Shipped Date: {{orderDataInDetail.shippedDate | date:'yyyy-MM-dd'}} </div>
+  </div>
+  -->
+  <mat-card class="orderDetail-card">
+    <div class="orderDetail-Row">
+      <div class="orderDetail-Col"><span>Required Date: {{orderDataInDetail.requiredDate | date:'yyyy-MM-dd'}}</span></div>
+      <div class="orderDetail-Col">Shipped Date: {{orderDataInDetail.shippedDate | date:'yyyy-MM-dd'}} </div>
+    </div>
+    <br>
+    <mat-card-header>
+
+      <div class="orderDetail-Row">
+        <!--<mat-card-title>Order Detail</mat-card-title>-->
+        <!--<span class="badge badge-secondary">Order Detail </span>-->
+        <mat-card-subtitle>Order Detail</mat-card-subtitle>
+      </div>
+
+    </mat-card-header>
+    <mat-card-content>
+      <!-- TODO 01/13/2019: rendRow not work
+      <div>{{orderDetailList.data.indexOf(1).valueOf()}}}</div>
+      -->
+      <!-- Order Detail Table -->
+
+      <table mat-table #OrdDetailTable [dataSource]="orderDetailList"
+             matSort matSortActive="orderLineNumber" matSortDisableClear matSortDirection="asc">
+        <!--
+        <ng-container matColumnDef="{{detailCol}}" *ngFor="let detailCol of displayedDetailColumns">
+          <th class="orderDetail-tableHead" mat-header-cell *matHeaderCellDef> {{detailCol}} </th>
+          <td class="orderDetail-tableRow" mat-cell *matCellDef="let detailItem">
+            {{detailItem[detailCol]}}
+          </td>
+        </ng-container>
+        -->
+
+        <!-- orderLineNumber Column -->
+        <ng-container matColumnDef="orderLineNumber">
+          <th class="orderDetail-tableHead" mat-header-cell *matHeaderCellDef mat-sort-header>Item No</th>
+          <td class="orderDetail-tableCol" mat-cell *matCellDef="let row">{{row.orderLineNumber}}</td>
+        </ng-container>
+        <!-- orderLineNumber Column -->
+        <ng-container matColumnDef="productCode">
+          <th class="orderDetail-tableHead" mat-header-cell *matHeaderCellDef>Product Code</th>
+          <td class="orderDetail-tableCol" mat-cell *matCellDef="let row">{{row.productCode}}</td>
+        </ng-container>
+        <!-- quantityOrdered Column -->
+        <ng-container matColumnDef="quantityOrdered">
+          <th class="orderDetail-tableHead" mat-header-cell *matHeaderCellDef>quantity Ordered</th>
+          <td class="orderDetail-tableCol" mat-cell *matCellDef="let row">{{row.quantityOrdered}}</td>
+        </ng-container>
+        <!-- priceEach Column -->
+        <ng-container matColumnDef="priceEach">
+          <th class="orderDetail-tableHead" mat-header-cell *matHeaderCellDef>Price Each</th>
+          <td class="orderDetail-tableCol" mat-cell *matCellDef="let row">{{row.priceEach}}</td>
+        </ng-container>
+
+        <tr mat-header-row *matHeaderRowDef="displayedDetailColumns"></tr>
+        <tr mat-row *matRowDef="let detailItem; columns: displayedDetailColumns;" [routerLink]="['/Order-details/', detailItem.orderNumber]"></tr>
+      </table>
+      <!-- Order Detail Table end -->
+
+    </mat-card-content>
+  </mat-card>
+
+</div>

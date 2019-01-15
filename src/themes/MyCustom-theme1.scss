@@ -1,0 +1,80 @@
+//@import '~@angular/material/theming';
+@import "_MyTheming1";
+// Plus imports for other components in your app.
+
+// Include the common styles for Angular Material. We include this here so that you only
+// have to load a single css file for Angular Material in your app.
+// Be sure that you only ever include this mixin once!
+@include mat-core();
+
+// Define the palettes for your theme using the Material Design palettes available in palette.scss
+// (imported above). For each palette, you can optionally specify a default, lighter, and darker
+// hue. Available color palettes: https://material.io/design/color/
+$myStyle1-app-primary: mat-palette($mat-lime);
+$myStyle1-app-accent:  mat-palette($mat-blue-grey, A200, A100, A400);
+
+// The warn palette is optional (defaults to red).
+$myStyle1-app-warn:    mat-palette($mat-brown);
+
+// Create the theme object (a Sass map containing all of the palettes).
+//$candy-app-theme: mat-light-theme($candy-app-primary, $candy-app-accent, $candy-app-warn);
+$myStyle1-app-themeDark1: mat-dark-theme($myStyle1-app-primary, $myStyle1-app-accent, $myStyle1-app-warn);
+
+// Include theme styles for core and each component used in your app.
+// Alternatively, you can import and @include the theme mixins for each component
+// that you are using.
+//@include angular-material-theme($myStyle1-app-themeDark1);
+
+.custom-theme-1 {
+  @include angular-material-theme($myStyle1-app-themeDark1);
+}
+
+$custom-primary-2: mat-palette($mat-yellow, 800);
+$custom-accent-2: mat-palette($mat-deep-orange);
+$custom-warn-2: mat-palette($mat-pink);
+
+$custom-theme-2: mat-light-theme($custom-primary-2, $custom-accent-2, $custom-warn-2);
+
+.custom-theme-2 {
+  @include angular-material-theme($custom-theme-2);
+}
+
+
+$myStyle2-app-primary: mat-palette($mat-teal);
+$myStyle2-app-accent:  mat-palette($mat-amber, A200, A100, A400);
+$myStyle2-app-warn:    mat-palette($mat-deep-orange);
+
+// Create your Sass color vars (will be available in all the project)
+//$myPrimary-bkground: mat-color($myStyle2-app-primary);
+$myPrimary-bkground: mat-color($mat-cyan, 600);
+//$accent: mat-color($app-accent);
+//$warn: mat-color($app-warn);
+
+
+$myStyle2-app-themeDark2: mat-dark-theme($myStyle2-app-primary, $myStyle2-app-accent, $myStyle2-app-warn);
+//@include theme-color-grabber($myStyle2-app-themeDark2);
+@include angular-material-theme($myStyle2-app-themeDark2);
+//$myStyle2-app-themeLight2: mat-light-theme($myStyle2-app-primary, $myStyle2-app-accent, $myStyle2-app-warn);
+//@include angular-material-theme($myStyle2-app-themeLight2);
+
+// Include the theme styles for only specified components.
+//@include mat-core-theme($myStyle2-app-themeDark2);
+//@include mat-button-theme($myStyle2-app-themeDark2);
+//@include mat-list-theme($myStyle2-app-themeDark2);
+//@include mat-checkbox-theme($myStyle1-app-themeDark1);
+
+
+.myStyle-bkground-amber {
+  // 直接取色盤, 使用darker或lighter參數，以透明度50%
+  background: mat-color(mat-palette($mat-amber), darker, 0.5);
+  // elevation，作為元件與元件之間高低差的概念，也就是陰影越深，高度看起來就越高。
+  @include mat-elevation(12);
+}
+
+.myStyle-Theme-bkground-1 {
+  // 直接取色盤, 使用darker或lighter參數，以透明度50%
+  //background: mat-color(mat-palette($mat-amber), darker, 0.5);
+  background: map_get($mat-cyan, 900),  //background: #303030,
+
+}
+

@@ -1,0 +1,8 @@
+{
+  "/classicmodel-ap1/*": {
+    "target": "http://classicmodel-augjs1-mytestprj1.a3c1.starter-us-west-1.openshiftapps.com",
+    "secure": false,
+    "logLevel": "debug",
+    "changeOrigin": true
+  }
+}

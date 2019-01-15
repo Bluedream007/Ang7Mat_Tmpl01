@@ -1,0 +1,49 @@
+@import "../../themes/MyCustom-theme1.scss";
+
+.sidenav-container {
+  height: 100%;
+  //background: mat-palette($mat-cyan, 900);
+  //myStyle-Theme-bkground-1
+}
+
+.sidenav {
+  width: 200px;
+  background: $myPrimary-bkground;
+;
+}
+
+.sidenav .mat-toolbar {
+  background: inherit;
+}
+
+//position: fixed;
+.mat-toolbar.mat-primary {
+  position: sticky;
+  top: 0;
+  z-index: 1;
+}
+
+.example-fill-remaining-space {
+  /* This fills the remaining space, by using flexbox.
+     Every toolbar row uses a flexbox row layout. */
+  flex: 1 1 auto;
+}
+
+.cust-background-cadetblue {
+  //background: mat-color(mat-palette($mat-red), darker, 0.5);
+  background: cadetblue;
+}
+
+.cust-colorRed-50 {
+  color: #ff6315;
+}
+
+.mat-button {
+  font-size: 24px;
+  color: #ff6315;
+  background: cadetblue;
+}
+
+
+
+

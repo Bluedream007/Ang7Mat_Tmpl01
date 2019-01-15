@@ -1,0 +1,21 @@
+// <!-- css 定義 Image size與邊際  -->
+.carousel-item .myImg-fluid {
+  width: 60%;
+  height: 30%;
+  margin-left: auto;
+  margin-right: auto;
+
+}
+
+
+.myMat-card-1 {
+  width: 100%;
+  height: 100%;
+  //max-width: 800px;
+  //max-height: 600px;
+}
+
+.myMat-header-image1 {
+  background-image: url('https://material.angular.io/assets/img/examples/shiba1.jpg');
+  background-size: cover;
+}
