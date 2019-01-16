@@ -20,6 +20,8 @@ export class SysMenuComponent implements OnInit {
   EnvName = environment.env_name;
   EnvMenuBkColor = environment.MenBarBkgroundColor;
 
+  SysTitle = 'AngD01';
+
   ngOnInit() {
     this.theme = 'custom-theme-1';
   }

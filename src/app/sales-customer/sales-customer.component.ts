@@ -61,6 +61,7 @@ export class SalesCustomerComponent implements OnInit, AfterViewInit {
   isLoadingResults = true;
   // Option for Query data
   QryOption = 'CustNo';
+  QryOptionValDemo = '103';
   //displayedColumns: string[] = ['customerNumber','customerName','phone','country', 'FuncList'];
   displayedColumns: string[] = ['customerNumber', 'customerName', 'phone', 'FuncList'];
   //displayedColumns: string[] = ['position', 'name', 'weight', 'symbol', 'temp'];
@@ -232,7 +233,7 @@ export class SalesCustomerComponent implements OnInit, AfterViewInit {
     this.sideNavTb.close();
   }
 
-  protected queryCustInfo(pQryCustVal: string) {
+  queryCustInfo(pQryCustVal: string) {
     this.isLoadingResults = true;
     console.log('QryOption: ', this.QryOption);
     if (this.QryOption !== 'CustNo') {

@@ -3,7 +3,7 @@
   "version": 1,
   "newProjectRoot": "projects",
   "projects": {
-    "Ang7Mat01": {
+    "Ang7MatTmpl01": {
       "root": "",
       "sourceRoot": "src",
       "projectType": "application",
@@ -17,7 +17,7 @@
         "build": {
           "builder": "@angular-devkit/build-angular:browser",
           "options": {
-            "outputPath": "dist/Ang7Mat01",
+            "outputPath": "dist/Ang7MatTmpl01",
             "index": "src/index.html",
             "main": "src/main.ts",
             "polyfills": "src/polyfills.ts",
@@ -69,21 +69,21 @@
         "serve": {
           "builder": "@angular-devkit/build-angular:dev-server",
           "options": {
-            "browserTarget": "Ang7Mat01:build"
+            "browserTarget": "Ang7MatTmpl01:build"
           },
           "configurations": {
             "production": {
-              "browserTarget": "Ang7Mat01:build:production"
+              "browserTarget": "Ang7MatTmpl01:build:production"
             },
             "uat": { // add a new target environment for ng serve
-              "browserTarget": "Ang7Mat01:build:uat"
+              "browserTarget": "Ang7MatTmpl01:build:uat"
             } // UAT end
           }
         },
         "extract-i18n": {
           "builder": "@angular-devkit/build-angular:extract-i18n",
           "options": {
-            "browserTarget": "Ang7Mat01:build"
+            "browserTarget": "Ang7MatTmpl01:build"
           }
         },
         "test": {
@@ -118,7 +118,7 @@
         }
       }
     },
-    "Ang7Mat01-e2e": {
+    "Ang7MatTmpl01-e2e": {
       "root": "e2e/",
       "projectType": "application",
       "prefix": "",
@@ -127,11 +127,11 @@
           "builder": "@angular-devkit/build-angular:protractor",
           "options": {
             "protractorConfig": "e2e/protractor.conf.js",
-            "devServerTarget": "Ang7Mat01:serve"
+            "devServerTarget": "Ang7MatTmpl01:serve"
           },
           "configurations": {
             "production": {
-              "devServerTarget": "Ang7Mat01:serve:production"
+              "devServerTarget": "Ang7MatTmpl01:serve:production"
             }
           }
         },
@@ -147,5 +147,5 @@
       }
     }
   },
-  "defaultProject": "Ang7Mat01"
+  "defaultProject": "Ang7MatTmpl01"
 }

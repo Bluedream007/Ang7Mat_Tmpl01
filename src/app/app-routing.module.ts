@@ -15,7 +15,6 @@ const routes: Routes = [
   { path: 'tree', component: SysTreeComponent },
   { path: 'drag', component: DragDropComponent },
   { path: 'customer', component: SalesCustomerComponent},
-  { path: 'order', component: SalesOrderComponent, data: { title: 'List of Orders' }},
   { path: 'order2', component: SalesOrder2Component, data: { title: 'List of Orders' }},
   { path: 'order2/:custNo', component: SalesOrder2Component, data: { title: 'List of Orders by CustomerNo' }},
   { path: 'carousel', component: SysCarouselComponent},

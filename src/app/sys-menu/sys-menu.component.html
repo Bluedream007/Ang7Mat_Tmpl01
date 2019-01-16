@@ -39,6 +39,7 @@
         <mat-icon aria-label="Side nav toggle icon">menu</mat-icon>
       </button>
       -->
+      <!-- for #drawer
       <button
         type="button"
         aria-label="Toggle sidenav"
@@ -47,17 +48,19 @@
         *ngIf="isHandset$ | async">
         <mat-icon aria-label="Side nav toggle icon">menu</mat-icon>
       </button>
+      -->
 
-      <span [style.color]="EnvMenuBkColor" >Ang7Mat01 - {{EnvName}}</span>
+      <span [style.color]="EnvMenuBkColor" >{{SysTitle}} - {{EnvName}}</span>
       <img src="assets/images/livejournal_32.png">
       <!-- 橫向選單 -->
       <mat-menu #rootMenu="matMenu">
-        <button mat-menu-item [matMenuTriggerFor]="subMenu_CI">CompanyInfo</button>
         <button mat-menu-item [matMenuTriggerFor]="subMenu_SI">SalesInfo</button>
+        <button mat-menu-item [matMenuTriggerFor]="subMenu_CI">CompanyInfo</button>
       </mat-menu>
 
       <mat-menu #subMenu_CI="matMenu">
-        <a routerLink="order"><button mat-menu-item>Order List</button></a>
+        <a routerLink="home"><button mat-menu-item>Home</button></a>
+        <a routerLink="salesman"><button mat-menu-item>Salesman Info</button></a>
         <a routerLink="shipping"><button mat-menu-item>Shipping Info</button></a>
         <button mat-menu-item>Company</button>
       </mat-menu>
@@ -65,10 +68,11 @@
       <mat-menu #subMenu_SI="matMenu">
         <a routerLink="customer"><button mat-menu-item>CustomerForm</button></a>
         <a routerLink="salesRepr"><button mat-menu-item disabled>Representative</button></a>
-        <a routerLink="order"><button mat-menu-item>OrderList</button></a>
-        <a routerLink="order2"><button mat-menu-item>Order2 List</button></a>
+        <a routerLink="order2"><button mat-menu-item>Order List</button></a>
         <a routerLink="orderDetail"><button mat-menu-item>OrderDetail</button></a>
       </mat-menu>
+
+
 
 
       <!-- 橫向選單 end -->

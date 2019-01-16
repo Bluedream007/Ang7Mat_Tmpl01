@@ -59,6 +59,7 @@ export class SalesOrder2Component implements OnInit, AfterViewInit {
   isLoadingResults = false;
   custNo: string;
   QryOption = 'OrderNo';
+  QryOptionValDemo = '10280';
   //expandedElement: ExpendedElement | null;
   expandedElement: Order | null;
   //expandedElement: ExpElement | null;
@@ -200,7 +201,7 @@ export class SalesOrder2Component implements OnInit, AfterViewInit {
       });
   }
 
-  protected queryOrderInfo(pQryInputVal: string) {
+  queryOrderInfo(pQryInputVal: string) {
      this.isLoadingResults = true;
      console.log('QryOption: ', this.QryOption);
      if (this.QryOption === 'CustNo') {
